@@ -806,39 +806,9 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         return -1;
 
     case mine:
-        j = state->hand[currentPlayer][choice1];  //store card we will trash
+		mine_card(*state, handPos, choice1, choice2);
+		return 0;
 
-        if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
-        {
-            return -1;
-        }
-
-        if (choice2 > treasure_map || choice2 < curse)
-        {
-            return -1;
-        }
-
-        if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
-        {
-            return -1;
-        }
-
-        gainCard(choice2, state, 2, currentPlayer);
-
-        //discard card from hand
-        discardCard(handPos, currentPlayer, state, 0);
-
-        //discard trashed card
-        for (i = 0; i < state->handCount[currentPlayer]; i++)
-        {
-            if (state->hand[currentPlayer][i] == j)
-            {
-                discardCard(i, currentPlayer, state, 0);
-                break;
-            }
-        }
-
-        return 0;
 
     case remodel:
         j = state->hand[currentPlayer][choice1];  //store card we will trash
@@ -1185,7 +1155,7 @@ int baron_card(int choice1, struct gameState *state, int handPos) {
 				card_not_discarded = 0;	// exit loop
 			}
 			else if (p > state->handCount[currentPlayer]) {
-				if(DEBUG) {
+				if (DEBUG) {
 					printf("No estate cards in your hand, invalid choice\n");
 					printf("Must gain an estate if there are any\n");
 				}
@@ -1233,7 +1203,7 @@ int minion_card(int choice1, int choice2, struct gameState *state, int handPos) 
 	}
 	else if (choice2) {      //discard hand, redraw 4, other players with 5+ cards discard hand and draw 4
 		//discard hand
-		while(numHandCards(state) > 0) {
+		while (numHandCards(state) > 0) {
 			discardCard(handPos, currentPlayer, state, 0);
 		}
 
@@ -1247,7 +1217,7 @@ int minion_card(int choice1, int choice2, struct gameState *state, int handPos) 
 			if (i != currentPlayer) {
 				if ( state->handCount[i] > 4 ) {
 					//discard hand
-					while( state->handCount[i] > 0 ) {
+					while (state->handCount[i] > 0) {
 						discardCard(handPos, i, state, 0);
 					}
 
@@ -1362,6 +1332,38 @@ int tribute_card(struct gameState *state, int handPos, int tributeRevealedCards[
 		}
 		else { //Action Card
 			state->numActions = state->numActions + 2;
+		}
+	}
+
+	return 0;
+}
+
+int mine_card(struct gameState *state, int handPos, int choice1, int choice2) {
+	int currentPlayer = whoseTurn(state);
+	int i, j = 0;
+
+	j = state->hand[currentPlayer][choice1];	// store card we will trash
+
+	if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold) {
+		return -1;
+	}
+	if (choice2 > treasure_map || choice2 > curse) {
+		return -1;
+	}
+	if ((getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2)) {
+		return -1;
+	}
+
+	gainCard(choice2, state, 2, currentPlayer);
+
+	// discard card from hand
+	discardCard(handPos, currentPlayer, state, 0);
+
+	// discard trashed card
+	for (i = 0; i < state->handCount[currentPlayer]; i++) {
+		if (state->hand[currentPlayer][i] == j) {
+			discardCard(i, currentPlayer, state, 0);
+			break;
 		}
 	}
 

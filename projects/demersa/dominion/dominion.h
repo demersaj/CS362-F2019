@@ -140,4 +140,7 @@ int ambassador_card(int choice1, int choice2, struct gameState *state, int handP
 int tribute_card(struct gameState *state, int handPos, int tributeRevealedCards[], int nextPlayer);
 /* Implementation of the tribute card */
 
+int mine_card(struct gameState *state, int handPos, int choice1, int choice2);
+/* Implementation of the mine card */
+
 #endif
