@@ -806,7 +806,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         return -1;
 
     case mine:
-		mine_card(*state, handPos, choice1, choice1);
+		mine_card(state, handPos, choice1, choice1);
 		return 0;
 
 
