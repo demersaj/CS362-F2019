@@ -1212,7 +1212,7 @@ int minion_card(int choice1, int choice2, struct gameState *state, int handPos) 
 		}
 
 		//other players discard hand and redraw if hand size > 4
-		for (i = 1; i < state->numPlayers; i++) {
+		for (i = 0; i < state->numPlayers; i++) {
 			if (i != currentPlayer) {
 				if ( state->handCount[i] > 4 ) {
 					//discard hand
@@ -1339,7 +1339,7 @@ int tribute_card(struct gameState *state, int handPos, int tributeRevealedCards[
 
 int mine_card(struct gameState *state, int handPos, int choice1, int choice2) {
 	int currentPlayer = whoseTurn(state);
-	int i, j = 0;
+	int i = 0, j = 0;
 
 	j = state->hand[currentPlayer][choice1];	// store card we will trash
 

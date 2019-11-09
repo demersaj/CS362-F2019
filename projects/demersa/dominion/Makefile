@@ -8,7 +8,7 @@ dominion.o: dominion.h dominion.c rngs.o
 
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
-#To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/
+#To run playdom you need to enter: ./playdom <any integer number> like ./playdom 10*/
 
 testDrawCard: testdrawcard.c dominion.o rngs.o
 	gcc  -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
@@ -25,7 +25,31 @@ runtests: testDrawCard
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player 
+all: playdom player
+
+
+unittestresults: unittest1.c dominion.o
+	echo "\nunittest1.c:" >> unittestresults.out
+	gcc -o unittest1 -fprofile-arcs -ftest-coverage dominion.c rngs.c unittest1.c $(CFLAGS)
+	./unittest1 >> unittestresults.out
+
+	echo "\nunittest2.c:" >> unittestresults.out
+	gcc -o unittest2 -fprofile-arcs -ftest-coverage dominion.c rngs.c unittest2.c $(CFLAGS)
+	./unittest2 >> unittestresults.out
+
+	echo "\nunittest3.c:" >> unittestresults.out
+	gcc -o unittest3 -fprofile-arcs -ftest-coverage dominion.c rngs.c unittest3.c $(CFLAGS)
+	./unittest3 >> unittestresults.out
+
+	echo "\nunittest4.c:" >> unittestresults.out
+	gcc -o unittest4 -fprofile-arcs -ftest-coverage dominion.c rngs.c unittest4.c $(CFLAGS)
+	./unittest4 >> unittestresults.out
+
+	echo "\nunittest5.c:" >> unittestresults.out
+	gcc -o unittest5 -fprofile-arcs -ftest-coverage dominion.c rngs.c unittest5.c $(CFLAGS)
+	./unittest5 >> unittestresults.out
+
+	gcov dominion.c -b -f >> unittestresults.out
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
