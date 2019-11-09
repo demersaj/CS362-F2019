@@ -1,0 +1,225 @@
+
+unittest1.c:
+
+----------Begin Testing Baron Card----------
+Failed test - Baron card was added to player's hand.
+Failed test - Baron card was played.
+Passed test - Baron card was discarded.
+Failed test - Baron card increased deck count.
+Passed test - Baron card added one to the number of buys.
+Failed test - Estate card was added to player hand.
+Passed test - Player gained four extra coins.
+Failed test - Game is over.
+
+----------End Testing Baron Card----------
+
+unittest2.c:
+
+----------Begin Testing Minion Card----------
+Failed test - Minion card was added to player's hand.
+Passed test - Minion card was played.
+Failed test - Minion card was discarded.
+Failed test - Minion card increased deck count.
+Passed test - Player gained two extra coins.
+Failed test - Player discarded their cards.
+Failed test - Player drew four new cards.
+Passed test - Player gained an extra action.
+Failed test - Function returns correctly.
+
+----------End Testing Minion Card----------
+
+unittest3.c:
+
+----------Begin Testing Ambassador Card----------
+Failed test - Ambassador card was added to player's hand.
+Failed test - Ambassador card was played.
+Failed test - Ambassador card was discarded.
+Failed test - Ambassador card increased deck count.
+Failed test - Ambassador card increased player hand count.
+Failed test - Ambassador card's choice2 is invalid.
+
+unittest4.c:
+
+----------Begin Testing Tribute Card----------
+Failed test - Tribute card was added to player's hand.
+Passed test - Tribute card was played.
+Failed test - Tribute card was discarded.
+Failed test - Tribute card increased deck count.
+Failed test - Tribute card increased action, coin, card count.
+Failed test - Tribute card increased player coins.
+
+----------End Testing Tribute Card----------
+
+unittest5.c:
+
+----------Begin Testing Mine Card----------
+Failed test - Mine card was added to player's hand.
+Failed test - Mine card was played.
+Failed test - Mine card was discarded.
+Failed test - Mine card increased deck count.
+Passed test - Player gained a treasure card./nFailed test - Player gained a card.
+
+----------End Testing Mine Card----------
+Function 'compare'
+Lines executed:85.71% of 7
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+No calls
+
+Function 'newGame'
+Lines executed:0.00% of 3
+No branches
+No calls
+
+Function 'kingdomCards'
+Lines executed:0.00% of 13
+No branches
+No calls
+
+Function 'initializeGame'
+Lines executed:86.08% of 79
+Branches executed:95.65% of 46
+Taken at least once:78.26% of 46
+No calls
+
+Function 'shuffle'
+Lines executed:100.00% of 19
+Branches executed:100.00% of 8
+Taken at least once:100.00% of 8
+No calls
+
+Function 'playCard'
+Lines executed:53.33% of 15
+Branches executed:60.00% of 10
+Taken at least once:30.00% of 10
+No calls
+
+Function 'buyCard'
+Lines executed:0.00% of 14
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'numHandCards'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'handCard'
+Lines executed:100.00% of 3
+No branches
+No calls
+
+Function 'supplyCount'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'fullDeckCount'
+Lines executed:0.00% of 12
+Branches executed:0.00% of 12
+Taken at least once:0.00% of 12
+No calls
+
+Function 'whoseTurn'
+Lines executed:100.00% of 2
+No branches
+No calls
+
+Function 'endTurn'
+Lines executed:0.00% of 23
+Branches executed:0.00% of 6
+Taken at least once:0.00% of 6
+No calls
+
+Function 'isGameOver'
+Lines executed:69.23% of 13
+Branches executed:100.00% of 8
+Taken at least once:62.50% of 8
+No calls
+
+Function 'scoreFor'
+Lines executed:0.00% of 63
+Branches executed:0.00% of 42
+Taken at least once:0.00% of 42
+No calls
+
+Function 'getWinners'
+Lines executed:0.00% of 34
+Branches executed:0.00% of 22
+Taken at least once:0.00% of 22
+No calls
+
+Function 'drawCard'
+Lines executed:72.00% of 25
+Branches executed:100.00% of 6
+Taken at least once:66.67% of 6
+No calls
+
+Function 'getCost'
+Lines executed:16.13% of 31
+Branches executed:100.00% of 28
+Taken at least once:7.14% of 28
+No calls
+
+Function 'cardEffect'
+Lines executed:6.96% of 158
+Branches executed:24.73% of 93
+Taken at least once:2.15% of 93
+No calls
+
+Function 'discardCard'
+Lines executed:87.50% of 16
+Branches executed:100.00% of 6
+Taken at least once:83.33% of 6
+No calls
+
+Function 'gainCard'
+Lines executed:56.25% of 16
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+No calls
+
+Function 'updateCoins'
+Lines executed:73.33% of 15
+Branches executed:100.00% of 8
+Taken at least once:75.00% of 8
+No calls
+
+Function 'baron_card'
+Lines executed:97.14% of 35
+Branches executed:100.00% of 16
+Taken at least once:81.25% of 16
+No calls
+
+Function 'minion_card'
+Lines executed:77.78% of 27
+Branches executed:77.78% of 18
+Taken at least once:72.22% of 18
+No calls
+
+Function 'ambassador_card'
+Lines executed:96.43% of 28
+Branches executed:100.00% of 22
+Taken at least once:90.91% of 22
+No calls
+
+Function 'tribute_card'
+Lines executed:59.52% of 42
+Branches executed:78.57% of 28
+Taken at least once:50.00% of 28
+No calls
+
+Function 'mine_card'
+Lines executed:57.89% of 19
+Branches executed:71.43% of 14
+Taken at least once:50.00% of 14
+No calls
+
+File 'dominion.c'
+Lines executed:42.60% of 716
+Branches executed:56.48% of 409
+Taken at least once:35.21% of 409
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
