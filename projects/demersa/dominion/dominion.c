@@ -1151,7 +1151,7 @@ int baron_card(int choice1, struct gameState *state, int handPos) {
 				}
 				state->hand[currentPlayer][state->handCount[currentPlayer]] = -1;
 				state->handCount[currentPlayer]--;
-				card_not_discarded = 1;		// exit loop
+				card_not_discarded = 0;		// exit loop
 			}
 			else if (p > state->handCount[currentPlayer]) {
 				if (DEBUG) {
@@ -1330,7 +1330,7 @@ int tribute_card(struct gameState *state, int handPos, int tributeRevealedCards[
 			drawCard(currentPlayer, state);
 		}
 		else { 	//Action Card
-			state->numActions = state->numActions + 0;
+			state->numActions = state->numActions + 2;
 		}
 	}
 

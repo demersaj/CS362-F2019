@@ -57,7 +57,7 @@ struct gameState {
     int supplyCount[treasure_map+1];  //this is the amount of a specific type of card given a specific number.
     int embargoTokens[treasure_map+1];
     int outpostPlayed;
-    int outpostTurn;
+    //int outpostTurn;
     int whoseTurn;
     int phase;
     int numActions; /* Starts at 1 each turn */
